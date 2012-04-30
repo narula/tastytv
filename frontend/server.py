@@ -25,6 +25,14 @@ def friends():
 @app.route("/browse")
 def browse():
     return render_template('browse.html')
+
+@app.route("/feeling")
+def browse():
+    return render_template('feeling.html')
+
+@app.route("/watchbox")
+def browse():
+    return render_template('watchbox.html')
     
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,57 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="en">
+{% extends "header.html" %}
+{% block body %}
 
-<head>
-  <meta charset="utf-8">
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/i/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title></title>
-  <meta name="description" content="">
-
-  <!-- Mobile viewport optimized: h5bp.com/viewport -->
-  <meta name="viewport" content="width=device-width">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
-  <link rel="stylesheet" href="static/css/style.css">
-
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="static/js/modernizr-2.5.3.min.js"></script>
-  <script type='text/javascript' src='static/jwplayer/jwplayer.js'></script>
-  <script type="text/javascript" src="static/chromatable/jquery.chromatable.js"></script>
-  <!-- <script type ='text/javascript' src='static/friendtable.js'></script>-->
- 
-  <script type="text/javascript" src="static/chromatable/jquery-1.3.2.min.js"></script>
-	<script type="text/javascript" src="static/chromatable/jquery-ui-1.7.2.custom.min.js"></script>
-    
-  <script>
-	$(document).ready(function(){
-		$("#friendTable").chromatable({
-				width: "300px",
-				height: "100px",
-				scrolling: "yes"	
-	});	
-	});
-</script>
-</head>
-
-<body bgcolor='#000000' rightmargin="50 px" leftmargin="50px" topmargin="10px">
-    
-  <div role="main">
-     <img src="static/img/title.png" width="300" height="100" />
-     <br />
-     <img src="static/img/watchbox_btn.png" width="150" height="30"/>
-     <img src="static/img/watchfriends_btn.png"  width="150" height="30"/>
-     <img src="static/img/feeling_btn.png"  width="150" height="30"/>
-  </div>
-  
   <br />
   <script type ='text/javascript' src='static/js/friendtable.js'></script>
   <div id="friendGroup"></div>
@@ -97,6 +47,5 @@
   <script src="static/js/plugins.js"></script>
   <script src="static/js/script.js"></script>
   <!-- end scripts -->
-</body>
 
-</html>
+{% endblock %}
