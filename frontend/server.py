@@ -52,7 +52,6 @@ def index():
 @app.route("/friends")
 def friends():
     messages=query_db('''select friends.* from friends limit 6 ''')
-    print messages
     return render_template('friends.html', messages=messages)
 
 @app.route("/browse")
