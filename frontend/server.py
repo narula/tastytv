@@ -33,7 +33,6 @@ def connect_db():
     """Returns a new connection to the database."""
     return sqlite3.connect(app.config['DATABASE'])
 
-
 def init_db():
     """Creates the database tables."""
     with closing(connect_db()) as db:
@@ -47,5 +46,3 @@ def query_db(query, args=(), one=False):
     rv = [dict((cur.description[idx][0], value)
                for idx, value in enumerate(row)) for row in cur.fetchall()]
     return (rv[0] if rv else None) if one else rv
-
-
