@@ -1,3 +1,4 @@
+from __future__ import with_statement
 from flask import Flask, url_for, request, render_template, g
 from sqlite3 import dbapi2 as sqlite3
 from contextlib import closing
@@ -9,33 +10,6 @@ DATABASE = 'tasty.db'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-
-@app.route("/hello")
-def hello():
-    return "Hello World!"
-
-@app.route("/")
-def index():
-    return render_template('index.html')
-
-@app.route("/friends")
-def friends():
-    return render_template('friends.html')
-
-@app.route("/browse")
-def browse():
-    return render_template('browse.html')
-
-@app.route("/feeling")
-def browse():
-    return render_template('feeling.html')
-
-@app.route("/watchbox")
-def browse():
-    return render_template('watchbox.html')
-    
-if __name__ == "__main__":
-    app.run(debug=True)
 
 def connect_db():
     """Returns a new connection to the database."""
@@ -54,3 +28,44 @@ def query_db(query, args=(), one=False):
     rv = [dict((cur.description[idx][0], value)
                for idx, value in enumerate(row)) for row in cur.fetchall()]
     return (rv[0] if rv else None) if one else rv
+
+@app.before_request
+def before_request():
+    """Make sure we are connected to the database
+    """
+    g.db = connect_db()
+
+@app.teardown_request
+def teardown_request(exception):
+    """Closes the database again at the end of the request."""
+    if hasattr(g, 'db'):
+        g.db.close()
+
+@app.route("/hello")
+def hello():
+    return "Hello World!"
+
+@app.route("/")
+def index():
+    return render_template('index.html')
+
+@app.route("/friends")
+def friends():
+    messages=query_db('''select friends.* from friends limit 6 ''')
+    print messages
+    return render_template('friends.html', messages=messages)
+
+@app.route("/browse")
+def browse():
+    return render_template('browse.html')
+
+@app.route("/feeling")
+def browse():
+    return render_template('feeling.html')
+
+@app.route("/watchbox")
+def browse():
+    return render_template('watchbox.html')
+    
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -1,6 +1,11 @@
 {% extends "header.html" %}
 {% block body %}
   <h2>Choose Friends</h2>
-<script type ='text/javascript' src='static/js/chooseFriends.js'></script>
+
+<table id="friendTable" border="0" cellspacing="10" cellpadding="10"> <tbody>	<tr>
+{% for message in messages %}
+  <td><img width="100px" height="100px" src="{{message.friend_pic}}" /></td>
+{% endfor %}
+</tr> </tbody> </table>
 
 {% endblock %}
