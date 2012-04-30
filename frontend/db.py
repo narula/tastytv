@@ -10,3 +10,6 @@ if __name__ == "__main__":
         f = open('schema.sql', 'r')
         db.cursor().executescript(f.read())
         db.commit()
+        f = open('insert.sql', 'r')
+        db.cursor().executescript(f.read())
+        db.commit()
