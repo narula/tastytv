@@ -12,4 +12,3 @@ document.write('<td><img class="friendthumb" src="/static/img/plusicon.png" /></
 document.write('</tr> </tbody> </table>');
 // done making table
 
-
