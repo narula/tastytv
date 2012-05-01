@@ -1,6 +1,6 @@
-insert into tvshows values(0, 0, '30rock', 'static/img/tv/30rock.jpg', '', '');
-insert into tvshows values(1, 1, 'Gossip Girl', 'static/img/tv/gossipgirl.jpg', '', '');
-insert into tvshows values(2, 1, 'Revenge', 'static/img/tv/revenge.jpg', '', '');
+insert into tvshows values(0, 0, '30rock', 'static/img/tv/30rock.jpg', '', 'Liz Lemon finds herself in a dilemma.  Cabletown is in trouble, Jack is gone, and Liz must take over.');
+insert into tvshows values(1, 1, 'Gossip Girl', 'static/img/tv/gossipgirl.jpg', '', 'Chuck and Blair blah blah');
+insert into tvshows values(2, 1, 'Revenge', 'static/img/tv/revenge.jpg', '', 'She gets her revenge');
 
 insert into genres values(0, 'comedy');
 insert into genres values(1, 'girly');

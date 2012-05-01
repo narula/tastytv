@@ -44,6 +44,16 @@ body { 	margin: :150px 150px 150px 150px;
 	 }
 p {color:#FFF}
 
+table.browseTable {
+	table-layout:fixed;
+
+}
+.browseTable td { 
+	max-width:160px;
+	min-width:160px;
+	text-align:left;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate
