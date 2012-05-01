@@ -54,17 +54,23 @@ def friends():
     messages=query_db('''select friends.* from friends limit 6 ''')
     return render_template('friends.html', messages=messages)
 
+@app.route("/feeling")
+def feeling():
+    genres=query_db('''select genres.* from genres ''')
+    return render_template('feeling.html',genres = genres)
+
 @app.route("/browse")
 def browse():
-    return render_template('browse.html')
-
-@app.route("/feeling")
-def browse():
-    return render_template('feeling.html')
+    shows=query_db('''select tvshows.* from tvshows ''')
+    return render_template('browse.html',shows=shows)
 
 @app.route("/watchbox")
-def browse():
+def watchbox():
     return render_template('watchbox.html')
+
+@app.route("/watch")
+def watch():
+    return render_template('watch.html')
     
 if __name__ == "__main__":
     app.run(debug=True)

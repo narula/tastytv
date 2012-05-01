@@ -1,6 +1,15 @@
 {% extends "header.html" %}
   {% block body %}
+  
   <h2>Browse</h2>
-  <script type ='text/javascript' src='static/js/browse.js'></script>
+  
+<table id="friendTable" border="0" cellspacing="20" cellpadding="20"> <tbody>	<tr>
+{% for show in shows %}
+	{% if (loop.index-1) % 3 == 0 %}
+    	</tr><tr>
+    {%endif%}
+  	<td><img width="150px" height="100px" src="{{show.show_pic}}" /></td>
+{% endfor %}
+</tr> </tbody> </table>
 
 {% endblock %}

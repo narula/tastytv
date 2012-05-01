@@ -4,6 +4,9 @@ insert into tvshows values(2, 1, 'Revenge', 'static/img/tv/revenge.jpg', '', '')
 
 insert into genres values(0, 'comedy');
 insert into genres values(1, 'girly');
+insert into genres values(2, 'cops');
+insert into genres values(3, 'dance');
+insert into genres values(4, 'sing');
 
 insert into friends values(1, '/static/img/friends/friend1.jpg');
 insert into friends values(2, '/static/img/friends/friend2.jpg');
