@@ -68,13 +68,21 @@ table.browseTable {
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+/*a { color: #00; }
+a:visited { color: #00; }
+a:hover { color: #00; }
 a:focus { outline: thin dotted; }
+*/
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
-a:hover, a:active { outline: 0; }
+/*a:hover, a:active { outline: 0; }*/
+a.header {
+	color:#FFF;
+	text-decoration:none;
+}
+a.header:hover {
+	color:#09F;
+}
 
 
 /* =============================================================================

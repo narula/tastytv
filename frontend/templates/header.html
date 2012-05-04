@@ -19,10 +19,18 @@
 
 <body bgcolor='#000000' rightmargin="50 px" leftmargin="50px" topmargin="10px">
 <div class=page>
-     <img src="static/img/title.png" width="250" height="100" 
-       			onClick="parent.location='/'"/>
+  <br />
+     <img src="static/img/title.png" width="350" height="100" 
+       			onClick="parent.location='/'" align="baseline" style="vertical-align:text-bottom"/>
       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                
+      
+      <a href="/browse" class="header"> Browse </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
+      <a href="/watchbox" class="header"> My WatchBox </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
+      <a href="/friends" class="header"> Watch with Friends</a>  &nbsp; &nbsp; | &nbsp;  &nbsp;
+      <a href="/feeling" class="header"> I'm Feeling  </a> &nbsp; &nbsp;  &nbsp; &nbsp;
+    
+      
+                <!--
      <img src="static/img/browse_btn.png" width="200" height="50" 
      			onmouseover="this.src ='static/img/browse_highlighted.png'" 	
      			onmouseout="this.src='static/img/browse_btn.png'"
@@ -41,10 +49,19 @@
      <img src="static/img/feeling_btn.png"  width="200" height="50" 
      			onmouseover="this.src ='static/img/feeling_highlighted.png'" 
                 onmouseout="this.src='static/img/feeling_btn.png'"
-                onClick="parent.location='/feeling'" />
-      <br />
+                onClick="parent.location='/feeling'" />-->
+      <br /> <br />
 
   {% block body %}
   {% endblock %}
+  
+  
+  <br /><br />
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; text-align: center;">
+  <a href="/about" class="header"> About </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
+  <a href="/contact" class="header"> Contact Us </a>  
+  </div>
+
+    
 </div>
 
