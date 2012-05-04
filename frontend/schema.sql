@@ -29,5 +29,6 @@ create table genres (
 drop table if exists friends;
 create table friends (
   user_id integer not null,
-  friend_pic string not null
+  friend_pic string not null,
+  friend_name string not null
 );

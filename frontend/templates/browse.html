@@ -8,7 +8,7 @@
 	{% if (loop.index-1) % 3 == 0 %}
     	</tr><tr>
     {%endif%}
-  	<td><img width="150px" height="100px" src="{{show.show_pic}}" /></td>
+  	<td><img width="150px" height="100px" src="{{show.show_pic}}" onclick="addShow()"/></td>
     <td> <b>{{show.show_name}}</b> <br /> {{show.show_description}} </td>
 {% endfor %}
 </tr> </tbody> </table>
