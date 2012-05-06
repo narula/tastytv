@@ -1,18 +1,15 @@
 <!doctype html>
 <title>Tubely</title>
-<link rel=stylesheet type=text/css href="static/css/style.css">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
 
 <head>
 
   <!-- JAVASCRIPT INCLUDE STATEMENTS -->
-  <script src="static/js/modernizr-2.5.3.min.js"></script>
-  <script type='text/javascript' src='static/jwplayer/jwplayer.js'></script>
-  <script type="text/javascript" src="static/chromatable/jquery.chromatable.js"></script>
-  <!-- <script type ='text/javascript' src='static/friendtable.js'></script>-->
- 
-  <script type="text/javascript" src="static/chromatable/jquery-1.3.2.min.js"></script>
-  <script type="text/javascript" src="static/chromatable/jquery-ui-1.7.2.custom.min.js"></script>
+  <script type='text/javascript' src="{{ url_for('static', filename='js/modernizr-2.5.3.min.js') }}"></script>
+  <script type='text/javascript' src="{{ url_for('static', filename='jwplayer/jwplayer.js') }}"></script>
+  
+
     
 </head>
 
@@ -20,7 +17,7 @@
 <body bgcolor='#000000' rightmargin="50 px" leftmargin="50px" topmargin="10px">
 <div class=page>
   <br />
-     <img src="static/img/title.png" width="350" height="100" 
+     <img src="{{ url_for('static', filename='img/title.png') }}" width="350" height="100" 
        			onClick="parent.location='/'" align="baseline" style="vertical-align:text-bottom"/>
       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
       

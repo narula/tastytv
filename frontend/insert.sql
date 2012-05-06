@@ -1,6 +1,12 @@
-insert into tvshows values(0, 0, '30rock', 'static/img/tv/30rock.jpg', '', 'Liz Lemon finds herself in a dilemma.  Cabletown is in trouble, Jack is gone, and Liz must take over.');
-insert into tvshows values(1, 1, 'Gossip Girl', 'static/img/tv/gossipgirl.jpg', '', 'Chuck and Blair blah blah');
-insert into tvshows values(2, 1, 'Revenge', 'static/img/tv/revenge.jpg', '', 'She gets her revenge');
+insert into tvshows values(0, 0, '30rock', 'static/img/tv/30rock.jpg',   '', 'Season 5, Episode 4', 'Liz Lemon finds herself in a dilemma.  Cabletown is in trouble, Jack is gone, and Liz must take over.');
+insert into tvshows values(1, 1, 'Gossip Girl', 'static/img/tv/gossipgirl.jpg', '', 'Season 5, Episode 4','Chuck and Blair blah blah');
+insert into tvshows values(2, 1, 'Revenge', 'static/img/tv/revenge.jpg', '','Season 3, Episode 8','She gets her revenge');
+insert into tvshows values(3, 0, 'How I Met Your Mother', 'static/img/tv/himym_S07E01.jpg', 'static/video/himym/S07E01 The Best Man.avi', 'Season 7, Episode 1','The Best Man Ted attends a wedding');
+insert into tvshows values(4, 0, 'How I Met Your Mother', 'static/img/tv/himym_S07E02.jpg', 'static/video/himym/S07E02 The Naked Truth.avi', 'Season 7, Episode 2','The Naked Truth');		
+insert into tvshows values(5, 0, 'How I Met Your Mother', 'static/img/tv/himym_S07E03.jpg', 'static/video/himym/S07E03 Ducky Tie.avi', 'Season 7, Episode 3','Ducky Tie');
+insert into tvshows values(6, 0, 'New Girl', 'static/img/tv/newgirl_S01E01.jpg', 'static/video/newgirl/S01E01 Pilot.avi', 'Season 1, Episode 1','Pilot Jess moves in with the guys');
+insert into tvshows values(7, 0, 'New Girl', 'static/img/tv/newgirl_S01E02.jpg', 'static/video/newgirl/S01E02 Kryptonite.avi', 'Season 1, Episode 2','Kryptonite');
+insert into tvshows values(8, 0, 'New Girl', 'static/img/tv/newgirl_S01E03.jpg', 'static/video/newgirl/S01E03 Wedding.avi', 'Season 1, Episode 3','Wedding Jess tries to help Nick make his ex jealous, but everything just ends up going wrong');
 
 insert into genres values(0, 'Comedy');
 insert into genres values(1, 'Girly');
@@ -33,3 +39,7 @@ insert into friends values(3, '/static/img/friends/friend3.jpg','Alex Cheng');
 insert into friends values(4, '/static/img/friends/friend4.jpg','Markus Bohn');
 insert into friends values(5, '/static/img/friends/friend5.jpg','Aatman Shah');
 insert into friends values(6, '/static/img/friends/friend6.jpg','Andrew Milne');
+
+insert into watchbox values(0,3);
+insert into watchbox values(0,6);
+insert into watchbox values(0,7);

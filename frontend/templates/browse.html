@@ -1,15 +1,33 @@
 {% extends "header.html" %}
   {% block body %}
   
-  <h2>Browse</h2>
+
+<script type='text/javascript' >
+
+function addShow(showID)
+{
+		
+}
+
+</script>
   
+ <!-- Header with non-functional search box --> 
+<b style="font-size:36px"> Browse </b> 
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;   &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<input type="search" name="googlesearch" style="color:#000; -webkit-border-radius:10px;
+    -moz-border-radius:15px;" value="Search Videos"/>
+<img src="static/img/search.png" width="40px" height="40px" />
+
+<br />
+  
+<!-- show videos -->
 <table id="friendTable" border="0" cellspacing="20" cellpadding="20" class="browseTable"> <tbody>	<tr>
 {% for show in shows %}
 	{% if (loop.index-1) % 3 == 0 %}
     	</tr><tr>
     {%endif%}
-  	<td><img width="150px" height="100px" src="{{show.show_pic}}" onclick="addShow()"/></td>
-    <td> <b>{{show.show_name}}</b> <br /> {{show.show_description}} </td>
+  	<td><img width="150px" height="100px" src="{{show.show_pic}}" onclick="addShow(this.name)" name="{{show.show_id}}"/></td>
+    <td> <b>{{show.show_name}}</b> <br /> <b>  {{show.show_season}} </b> <br /> {{show.show_description}} </td>
 {% endfor %}
 </tr> </tbody> </table>
 

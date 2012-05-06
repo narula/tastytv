@@ -5,6 +5,7 @@ create table tvshows (
   show_name string not null,
   show_pic string not null,
   show_video string not null,
+  show_season string not null,
   show_description string not null
 );
 

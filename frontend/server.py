@@ -51,8 +51,8 @@ def index():
 
 @app.route("/friends")
 def friends():
-    messages=query_db('''select friends.* from friends limit 6 ''')
-    return render_template('friends.html', messages=messages)
+    friends=query_db('''select friends.* from friends''')
+    return render_template('friends.html', friends=friends)
 
 @app.route("/feeling")
 def feeling():
@@ -71,6 +71,17 @@ def watchbox():
 @app.route("/watch")
 def watch():
     return render_template('watch.html')
+
+# after you've selected friends to watch with
+@app.route("/watch/<friends>")
+def watch(friends=None):
+    friendArray = friends.split(",")[:-1]
+    friendArray = ','.join(friendArray)
+    friendArray = '('+friendArray+')'
+    sqlString = '''select friends.* from friends where user_id in '''+friendArray
+    friendInfo = query_db(sqlString)
+    watchbox = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''') 
+    return render_template('watch.html',friends=friendInfo,watchbox=watchbox)
 
 @app.route("/about")
 def about():
