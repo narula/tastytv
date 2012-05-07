@@ -4,33 +4,6 @@ import xml.dom.minidom as minidom
 
 SHOW_URL = "http://www.thetvdb.com/api/GetSeries.php?seriesname=%s"
 
-SERIES = [
-    "30%20Rock",
-    "Gossip%20Girl",
-    "90210",
-    "Gilmore%20Girls",
-    "Revenge",
-    "Friday%20Night%20Lights",
-    "Grey's%20Anatomy",
-    "The%20Amazing%20Race",
-    "Supernatural",
-    "Desperate%20Housewives",
-    "Fringe",
-    "The%20Vampire%20Diaries",
-    "Merlin",
-    "Once%20Upon%20A%20Time%20(2011)",
-    "House",
-    "NCIS",
-    "Game%20of%20Thrones",
-    "The%20Big%20Bang%20Theory",
-    "How%20I%20Met%20Your%20Mother",
-    "Breaking%20Bad",
-    "Castle",
-    "Bones",
-    
-    "The%20Wire",
-    ]
-
 FIELDS = [
     "seriesid",
     "SeriesName",
