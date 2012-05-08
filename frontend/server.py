@@ -1,5 +1,5 @@
 from __future__ import with_statement
-from flask import Flask, url_for, request, render_template, g
+from flask import Flask, url_for, request, render_template, g, json
 from sqlite3 import dbapi2 as sqlite3
 from contextlib import closing
 
@@ -86,7 +86,7 @@ def watch(friends=None):
     watchbox = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
     showString = '''select tvshows.* from tvshows where tvshows.show_id='''+showID
     showToQueue = query_db(showString)
-    return render_template('watch.html',friends=friendInfo,watchbox=watchbox,shows=showToQueue)
+    return render_template('watch.html',friends=friendInfo,watchbox=watchbox,shows=showToQueue, json_struct=json.dumps(showToQueue[0]))
 
 # after you've selected friends to watch with, show you three shows
 @app.route("/chooseShow/<friends>")
