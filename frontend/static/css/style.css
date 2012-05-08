@@ -73,12 +73,29 @@ div.chooseFriends {
     -moz-border-radius:15px;
 	background-color:#333;
 }
+div.centeredSection {
+    text-align:center;
+}
+div.friendsChosen {
+    text-align:center;
+}
 
 table.friendTable {
 	padding:10px;
 	margin-left:50px;
 	margin-bottom:50px;
 	margin-right:50px;
+}
+
+table.centeredTable {
+	padding:10px;
+	margin-left:auto;
+	margin-bottom:50px;
+	margin-right:auto;
+	text-align:center;
+}
+table.centeredTable td{
+    text-align:center;
 }
 
 button.watch {
@@ -118,6 +135,10 @@ button.addedgenre {
 }
 button.addedgenre:hover {
 	background-color:#0FF;	
+}
+
+img.showToWatch:hover {
+    border:2px solid #ffffff;
 }
 
 /*
