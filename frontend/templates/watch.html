@@ -16,7 +16,6 @@ function addVideoToPlaylist(showpic, showvideo, showname)
 }
 
 </script>
-
   
 <div id="friendTable"></div>
   
@@ -33,6 +32,7 @@ function addVideoToPlaylist(showpic, showvideo, showname)
 <div id="container"></div>
 
   <script type="text/javascript">
+    var myShows = ({{ json_struct|safe }});
     jwplayer("container").setup({
     'flashplayer': "{{ url_for('static', filename='jwplayer/player.swf') }}",
 	'width': '1000',
