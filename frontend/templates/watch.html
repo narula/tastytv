@@ -44,6 +44,11 @@ function addVideoToPlaylist(showpic, showvideo, showname)
             'file': "{{ url_for('static', filename='jwplayer/video.mp4') }}", 
             'image': "{{ url_for('static', filename='jwplayer/preview.jpg') }}",
             'title': 'The first video'
+    },
+	{
+            'file': "{{ url_for('static', filename='jwplayer/video.mp4') }}", 
+            'image': "{{ url_for('static', filename='jwplayer/preview.jpg') }}",
+            'title': 'The first video'
     },{ 
             'file': "{{ url_for('static', filename='jwplayer/video.mp4') }}", 
             'image': "{{ url_for('static', filename='jwplayer/preview.jpg') }}",
@@ -60,13 +65,17 @@ function addVideoToPlaylist(showpic, showvideo, showname)
 
 <br />
 <br />
+{% for show in shows %}
+<img width="150px" height="80px" src="../{{show.show_pic}}" onclick="addVideoToPlaylist(this.src, 'http://www.youtube.com/watch?v=TV-NhfgoA7A', this.name)" id="{{show.show_video}}" name="{{show.show_name}}" />
+{% endfor %}
+<br />
 
 <div class="watchbox"> 
 <b> Your Watchbox </b>
 
 <table id="watchbox" border="0" cellspacing="100" cellpadding="100" class="watchbox"> <tbody>	<tr>
 {% for video in watchbox %}
-	<td><img width="150px" height="80px" src="../{{video.show_pic}}" onclick="addVideoToPlaylist(this.src, this.id, this.name)" id="{{video.show_video}}" name="{{video.show_name}}" /></td>
+	<td><img width="150px" height="80px" src="../{{video.show_pic}}" onclick="addVideoToPlaylist(this.src, 'http://www.youtube.com/watch?v=TV-NhfgoA7A', this.name)" id="{{video.show_video}}" name="{{video.show_name}}" /></td>
 {% endfor %}
 </tr> </tbody> </table>
 </div>

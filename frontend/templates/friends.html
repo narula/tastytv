@@ -69,10 +69,10 @@ function watch()
 	var friendString = '';
 	for(var i=0; i < friendsIDs.length; i++)
 	{
-		friendString = friendString + friendsIDs[i] + ",";
+		friendString = friendString + friendsIDs[i] + "|";
 	}
 	//var newURL = "{{url_for('watch', friends="+friendString+")}}";
-	var newURL = "/watch/"+friendString;
+	var newURL = "/chooseShow/"+friendString;
 	
 	//document.getElementById("debug").innerHTML = newURL;
 	parent.location = newURL; //"{{ url_for('watch', userid=hello)}}";	

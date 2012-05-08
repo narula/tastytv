@@ -11,6 +11,7 @@ DATABASE = 'tasty.db'
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+
 def connect_db():
     """Returns a new connection to the database."""
     return sqlite3.connect(app.config['DATABASE'])
@@ -75,13 +76,29 @@ def watch():
 # after you've selected friends to watch with
 @app.route("/watch/<friends>")
 def watch(friends=None):
-    friendArray = friends.split(",")[:-1]
+    friendArray = friends.split("|")[:-1]
+    showID = friendArray.pop()
+    showID = "'"+showID+"'"
     friendArray = ','.join(friendArray)
     friendArray = '('+friendArray+')'
     sqlString = '''select friends.* from friends where user_id in '''+friendArray
     friendInfo = query_db(sqlString)
-    watchbox = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''') 
-    return render_template('watch.html',friends=friendInfo,watchbox=watchbox)
+    watchbox = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
+    showString = '''select tvshows.* from tvshows where tvshows.show_id='''+showID
+    showToQueue = query_db(showString)
+    return render_template('watch.html',friends=friendInfo,watchbox=watchbox,shows=showToQueue)
+
+# after you've selected friends to watch with, show you three shows
+@app.route("/chooseShow/<friends>")
+def chooseShow(friends=None):
+    friendArray = friends.split("|")[:-1]
+    friendArray = ','.join(friendArray)
+    friendArray = '('+friendArray+')'
+    sqlString = '''select friends.* from friends where user_id in '''+friendArray
+    friendInfo = query_db(sqlString)
+    videos = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id limit 3''') 
+    return render_template('chooseShow.html',friends=friendInfo,videos=videos)
+
 
 @app.route("/about")
 def about():
