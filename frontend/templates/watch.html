@@ -44,20 +44,8 @@ function addVideoToPlaylist(showpic, showvideo, showname)
             'file': "http://www.youtube.com/watch?v=TV-NhfgoA7A",
             'image': "../"+myShow.show_pic,
             'title': myShow.show_name
-    },
-	{
-            'file': "{{ url_for('static', filename='jwplayer/video.mp4') }}", 
-            'image': "{{ url_for('static', filename='jwplayer/preview.jpg') }}",
-            'title': 'The first video'
-    },{ 
-            'file': "{{ url_for('static', filename='jwplayer/video.mp4') }}", 
-            'image': "{{ url_for('static', filename='jwplayer/preview.jpg') }}",
-            'title': 'The second video'
-    },{
-            'file': "{{ url_for('static', filename='jwplayer/video.mp4') }}", 
-            'image': "{{ url_for('static', filename='jwplayer/preview.jpg') }}",
-            'title': 'The first video'
-    }],
+    }
+],
     repeat: 'list'
     });
 </script>
