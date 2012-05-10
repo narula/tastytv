@@ -18,11 +18,11 @@
 <div class=page>
   <br />
      <img src="{{ url_for('static', filename='img/title.png') }}" width="350" height="100" 
-       			onClick="parent.location='/'" align="baseline" style="vertical-align:text-bottom"/>
+       			onClick="parent.location='/watchbox/stream'" align="baseline" style="vertical-align:text-bottom"/>
       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
       
       <a href="/browse" class="header"> Browse </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
-      <a href="/watchbox" class="header"> My WatchBox </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
+      <a href="/watchbox/stream" class="header"> My WatchBox </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
       <a href="/friends" class="header"> Watch with Friends</a>  &nbsp; &nbsp; | &nbsp;  &nbsp;
       <a href="/feeling" class="header"> I'm Feeling  </a> &nbsp; &nbsp;  &nbsp; &nbsp;
     
@@ -54,6 +54,9 @@
   
   <br />  <br />  <br />
 
+<iframe src="http://www.facebook.com/plugins/like.php?href=http://localhost:8080/index.html"
+        scrolling="no" frameborder="0"
+        style="border:none; width:450px; height:80px"></iframe>
 <div style="position:absolute width: 100%; text-align: center;">  
   <a href="/about" class="header"> About </a>  &nbsp; &nbsp; | &nbsp; &nbsp;
   <a href="/contact" class="header"> Contact Us </a>  

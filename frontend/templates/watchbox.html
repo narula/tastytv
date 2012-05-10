@@ -1,18 +1,44 @@
 {% extends "header.html" %}
   {% block body %}
-  <h2>Watchbox</h2>
-  <script type ='text/javascript' src='static/js/friendtable.js'></script>
+  
+  <script type='text/javascript' >
+function addVideoToPlaylist(showpic, showvideo, showname)
+{
+	
+	var playlist = jwplayer().getPlaylist();
+	var newItem = {
+            file: "../"+showvideo,
+            image: showpic,
+            title: showname
+    };
+	playlist.push(newItem);
+	jwplayer().load(playlist);
+}
+
+</script>
+
+  <!--<script type ='text/javascript' src='static/js/friendtable.js'></script>-->
+  
+  <div id="addedGenresTable" style="height:50px">
+  <table id="watchbox" border="0" cellspacing="100" cellpadding="100" class="watchbox"> <tbody>	<tr>
+{% for genre in moods %}
+<td><button class="addedgenre" name="{{genre.genre_name}}" onclick="removeGenre(this.name)">{{genre.genre_name}}</button></td>
+{% endfor %}
+</tr> </tbody> </table>
+
+</div>
+
   
   <div id="container"></div>
 
   <script type="text/javascript">
     jwplayer("container").setup({
-    'flashplayer': 'static/jwplayer/player.swf',
+    'flashplayer': "{{ url_for('static', filename='jwplayer/player.swf') }}",
 		'width': '1000',
     'height': '400',
     'playlist.position': 'right',
     'playlist.size': '320',
-		'skin': 'static/jwplayer/glow.zip',
+		'skin': "{{ url_for('static', filename='jwplayer/glow.zip') }}",
     'playlist': [{
             'file': 'static/jwplayer/video.mp4', 
             'image': 'static/jwplayer/preview.jpg',
@@ -29,6 +55,18 @@
     repeat: 'list'
     });
 </script>
+
+<br />
+
+<div class="watchbox"> 
+<b> Your Watchbox </b>
+
+<table id="watchbox" border="0" cellspacing="100" cellpadding="100" class="watchbox"> <tbody>	<tr>
+{% for video in watchbox %}
+	<td><img width="150px" height="80px" src="../{{video.show_pic}}" onclick="addVideoToPlaylist(this.src, 'http://www.youtube.com/watch?v=TV-NhfgoA7A', this.name)" id="{{video.show_video}}" name="{{video.show_name}}" /></td>
+{% endfor %}
+</tr> </tbody> </table>
+</div>
 
 
 {% endblock %}

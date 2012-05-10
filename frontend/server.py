@@ -65,9 +65,19 @@ def browse():
     shows=query_db('''select tvshows.* from tvshows ''')
     return render_template('browse.html',shows=shows)
 
-@app.route("/watchbox")
-def watchbox():
-    return render_template('watchbox.html')
+@app.route("/watchbox/<mood>")
+def watchbox(mood):
+    if(mood == 'stream'):
+        moods = {}
+        playlist = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
+    else:
+        moodArray = mood.split("|")[:-1]
+        moodArray = ','.join(moodArray)
+        moodArray = '('+moodArray+')'
+        moods = query_db('''select genres.* from genres where genres.genre_id in ''' + moodArray)
+        playlist = query_db('''select tvshows.* from tvshows, genres where genres.genre_id in ''' + moodArray)
+    watchbox = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
+    return render_template('watchbox.html', watchbox = watchbox, moods = moods, playlist = playlist)
 
 @app.route("/watch")
 def watch():
@@ -75,7 +85,7 @@ def watch():
 
 # after you've selected friends to watch with
 @app.route("/watch/<friends>")
-def watch(friends=None):
+def watch(friends):
     friendArray = friends.split("|")[:-1]
     showID = friendArray.pop()
     showID = "'"+showID+"'"

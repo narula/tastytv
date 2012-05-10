@@ -20,7 +20,7 @@ function addGenre(genre)
 		genres.push(genre);
 	}
 	// redraw grid
-	drawAddedGenres();
+	//drawAddedGenres();
 }
 
 function removeGenre(genre)
@@ -34,7 +34,7 @@ function removeGenre(genre)
 		}
 	}
 	genres.splice(spot,1);	
-	drawAddedGenres();
+	//drawAddedGenres();
 }
 
 function drawAddedGenres()
@@ -63,19 +63,64 @@ function drawAddedGenres()
 		document.getElementById("addedGenresTable").innerHTML= 'I guess you\'re feeling blah since you haven\t yet selected any genres';
 	}
 }
+
+function toggleGenre(name, id)
+{
+	if(containsGenre(id))
+	{
+		document.getElementById(id).style.backgroundColor = '#FF9';
+		removeGenre(id);
+	} else {
+		document.getElementById(id).style.backgroundColor = '#FF0';
+		addGenre(id);
+	}
+		
+		
+}
+
+function containsGenre(id)
+{
+	for(var i=0; i < genres.length; i++)
+	{
+		if(genres[i] == id)
+		{
+			return true;	
+		}
+		
+	}
+	return false;
+}
+
+function watchNow()
+{
+	var genreString = '';
+	for(var i=0; i < genres.length; i++)
+	{
+		genreString = genreString + genres[i] + "|";
+	}
+	//var newURL = "{{url_for('watch', friends="+friendString+")}}";
+	var newURL = "/watchbox/"+genreString;
+	
+	//document.getElementById("debug").innerHTML = newURL;
+	parent.location = newURL;	
+	
+}
 </script>
 
-<h2> I'm Feeling... </h2>
-<div id="addedGenresTable" style="height:50px">
+<b style="font-size:36px"> I'm Feeling... </b> 
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;   &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<button class="watch" onclick="watchNow()" > Watch Now! </button>
+<!--<div id="addedGenresTable" style="height:50px">
 You haven't chosen a mood yet.
-</div>
+</div>-->
   
 <table id="genreTable" border="0" cellspacing="10" cellpadding="10"> <tbody>	<tr>
 {% for genre in genres %}
 	{% if (loop.index-1) % 4 == 0 %}
     	</tr><tr>
     {%endif%}
-  <td><button class="genre" name="{{genre.genre_name}}" onclick="addGenre(this.name)" > {{genre.genre_name}} </button> </td>
+  <td><button class="genre" name="{{genre.genre_name}}" onclick="toggleGenre(this.name, this.id)" id="{{genre.genre_id}}" > {{genre.genre_name}} </button> </td>
 {% endfor %}
 </tr> </tbody> </table>
 
