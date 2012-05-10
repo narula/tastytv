@@ -1,21 +1,5 @@
 {% extends "header.html" %}
   {% block body %}
-
-<script type='text/javascript' >
-function addVideoToPlaylist(showpic, showvideo, showname)
-{
-	
-	var playlist = jwplayer().getPlaylist();
-	var newItem = {
-            file: "../"+showvideo,
-            image: showpic,
-            title: showname
-    };
-	playlist.push(newItem);
-	jwplayer().load(playlist);
-}
-
-</script>
   
 <div id="friendTable"></div>
   

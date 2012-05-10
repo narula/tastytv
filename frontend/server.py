@@ -48,7 +48,10 @@ def hello():
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    showString = '''select tvshows.* from tvshows LIMIT 5'''
+    showsToQueue = query_db(showString)
+    jsShows = json.dumps(showsToQueue)
+    return render_template('index.html', jsShows=jsShows)
 
 @app.route("/friends")
 def friends():
