@@ -5,7 +5,17 @@
   
   <p style="color:#09F"> Streaming from your WatchBox... </p>
   <div id="container"></div>
+  <script type='text/javascript' src="{{ url_for('static', filename='jwplayer/jwplayer.js') }}"></script>
   <script type="text/javascript">
+    var Shows = ({{ jsShows|safe }});
+    var Playlist = new Array();
+    for (var i = 0; i < Shows.length; i++) {
+     Entry = {};
+     Entry.file = Shows[i].show_video;
+     Entry.image = "../"+ Shows[i].show_pic;
+     Entry.title = Shows[i].show_name;
+     Playlist.push(Entry);
+    }
     jwplayer("container").setup({
     'flashplayer': 'static/jwplayer/player.swf',
 		'width': '1000',
@@ -13,19 +23,7 @@
     'playlist.position': 'right',
     'playlist.size': '320',
 		'skin': 'static/jwplayer/glow.zip',
-    'playlist': [{
-            'file': 'static/jwplayer/video.mp4', 
-            'image': 'static/jwplayer/preview.jpg',
-            'title': 'The first video'
-    },{ 
-            'file': 'static/jwplayer/video.mp4', 
-            'image': 'static/jwplayer/preview.jpg',
-            'title': 'The second video'
-    },{
-            'file': 'static/jwplayer/video.mp4', 
-            'image': 'static/jwplayer/preview.jpg',
-            'title': 'The first video'
-    }],
+    'playlist': Playlist,
     repeat: 'list'
     });
 </script>
