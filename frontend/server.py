@@ -78,8 +78,9 @@ def watchbox(mood):
         moodArray = ','.join(moodArray)
         moodArray = '('+moodArray+')'
         moods = query_db('''select genres.* from genres where genres.genre_id in ''' + moodArray)
-        playlist = query_db('''select tvshows.* from tvshows, genres where genres.genre_id in ''' + moodArray)
+        playlist = query_db('''select tvshows.* from tvshows, genres where tvshows.show_genre = genres.genre_id and genres.genre_id in ''' + moodArray + ''' limit 6''')
     watchbox = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
+    playlist =  json.dumps(playlist)
     return render_template('watchbox.html', watchbox = watchbox, moods = moods, playlist = playlist)
 
 @app.route("/watch")

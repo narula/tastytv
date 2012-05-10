@@ -17,12 +17,12 @@
      Playlist.push(Entry);
     }
     jwplayer("container").setup({
-    'flashplayer': 'static/jwplayer/player.swf',
+    'flashplayer': "{{ url_for('static', filename='jwplayer/player.swf') }}",
 		'width': '1000',
     'height': '400',
     'playlist.position': 'right',
     'playlist.size': '320',
-		'skin': 'static/jwplayer/glow.zip',
+		'skin': "{{ url_for('static', filename='jwplayer/glow.zip') }}",
     'playlist': Playlist,
     repeat: 'list'
     });
