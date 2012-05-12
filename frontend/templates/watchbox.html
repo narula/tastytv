@@ -2,14 +2,15 @@
   {% block body %}
   
   <script type='text/javascript' >
-function addVideoToPlaylist(showpic, showvideo, showname)
+function addVideoToPlaylist(showpic, showvideo, showname, showdescription)
 {
 	
 	var playlist = jwplayer().getPlaylist();
 	var newItem = {
             file: "../"+showvideo,
             image: showpic,
-            title: showname
+            title: showname,
+            description: showdescription
     };
 	playlist.push(newItem);
 	jwplayer().load(playlist);
@@ -40,6 +41,7 @@ function addVideoToPlaylist(showpic, showvideo, showname)
      Entry.file = Shows[i].show_video;
      Entry.image = "../"+ Shows[i].show_pic;
      Entry.title = Shows[i].show_name;
+     Entry.description = Shows[i].show_description;
      Playlist.push(Entry);
     }
     jwplayer("container").setup({
@@ -61,7 +63,7 @@ function addVideoToPlaylist(showpic, showvideo, showname)
 
 <table id="watchbox" border="0" cellspacing="100" cellpadding="100" class="watchbox"> <tbody>	<tr>
 {% for video in watchbox %}
-	<td><img width="150px" height="80px" src="../{{video.show_pic}}" onclick="addVideoToPlaylist(this.src, 'http://www.youtube.com/watch?v=TV-NhfgoA7A', this.name)" id="{{video.show_video}}" name="{{video.show_name}}" /></td>
+	<td><img width="150px" height="80px" src="../{{video.show_pic}}" onclick="addVideoToPlaylist(this.src, 'http://www.youtube.com/watch?v=TV-NhfgoA7A', this.name)" id="{{video.show_video}}" name="{{video.show_name}}" description="{{video.show_description}}" /></td>
 {% endfor %}
 </tr> </tbody> </table>
 </div>
