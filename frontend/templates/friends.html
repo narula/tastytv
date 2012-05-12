@@ -7,7 +7,8 @@
       
 <script type='text/javascript' >
 var addedFriends = [];
-var friendsIDs = []
+var friendsIDs = [];
+var genres = [];
 
 function addFriend(friendPic, friendID)
 {
@@ -79,6 +80,50 @@ function watch()
 	
 }
 
+function toggleGenre(name, id)
+{
+	if(containsGenre(id))
+	{
+		document.getElementById(id).style.backgroundColor = '#9CC';
+		removeGenre(id);
+	} else {
+		document.getElementById(id).style.backgroundColor = '#FF0';
+		addGenre(id);
+	}
+		
+		
+}
+
+function containsGenre(id)
+{
+	for(var i=0; i < genres.length; i++)
+	{
+		if(genres[i] == id)
+		{
+			return true;	
+		}
+		
+	}
+	return false;
+}
+function addGenre(genre)
+{
+	genres.push(genre);
+}
+
+function removeGenre(genre)
+{
+	var spot;
+	for(var i=0; i < genres.length; i++)
+	{
+		if(genres[i] == genre)
+		{
+			spot = i;	
+		}
+	}
+	genres.splice(spot,1);	
+}
+
 </script>
 
 <!------------------------------- SELECTED FRIENDS --------------------------------->
@@ -97,22 +142,39 @@ function watch()
 <!------------------------------- CHOOSE FRIENDS --------------------------------->
 <div class="chooseFriends" >
 <br />
-Choose Friends to watch with..   
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+Choose Friends..   
+&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 <input type="search" name="googlesearch" style="color:#000; -webkit-border-radius:10px;
     -moz-border-radius:15px;" value="Search Friends"/>
 <img src="static/img/search.png" width="40px" height="40px" />
-
+ &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+ Choose a mood...
+ 
 <br />
+<table> <tr><td>
 <table id="friendTable" border="0" cellspacing="100" cellpadding="100" class="friendTable"> <tbody>	<tr>
 {% for friend in friends %}
-	{% if (loop.index-1) % 10 == 0 %}
+	{% if (loop.index-1) % 6 == 0 %}
     	</tr><tr>
     {%endif%}
   	<td><img width="70px" height="70px" src="{{friend.friend_pic}}" onclick="addFriend(this.src,this.id)" id="{{friend.user_id}}" /></td>
 
 {% endfor %}
 <tr/> </tbody> </table>
+</td><td>
+
+<table id="friendTable" border="0" cellspacing="100" cellpadding="100" class="friendTable"> <tbody>	<tr>
+{% for genre in genres %}
+	{% if (loop.index-1) % 3 == 0 %}
+    	</tr><tr>
+    {%endif%}
+  	<td><button class="chooseGenre" name="{{genre.genre_id}}" onclick="toggleGenre(this.name, this.id)" id="{{genre.genre_name}}" > {{genre.genre_name}} </button></td>
+
+{% endfor %}
+<tr/> </tbody> </table>
+</td></tr></table>
+
 <br />
 </div>
 

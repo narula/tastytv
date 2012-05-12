@@ -60,7 +60,8 @@ def index():
 @app.route("/friends")
 def friends():
     friends=query_db('''select friends.* from friends''')
-    return render_template('friends.html', friends=friends)
+    genres = query_db('''select genres.* from genres''')
+    return render_template('friends.html', friends=friends, genres = genres)
 
 @app.route("/feeling")
 def feeling():

@@ -66,7 +66,7 @@ div.watchbox {
 
 div.chooseFriends {
 	width: 100%; 
-	text-align: center;
+	text-align: left;
 	border:0px solid;
 	padding:0px;
 	-webkit-border-radius:10px;
@@ -82,9 +82,9 @@ div.friendsChosen {
 
 table.friendTable {
 	padding:10px;
-	margin-left:100px;
+	margin-left:50px;
 	margin-bottom:50px;
-	margin-right:50px;
+	margin-right:30px;
 }
 
 table.centeredTable {
@@ -115,13 +115,13 @@ button.genre {
 	height:70px; 
 	color:#000;
 	padding:3px 10px; 
-	background-color:#FF9; 
+	background-color:#9CC; 
     -webkit-border-radius:10px;
     -moz-border-radius:15px;
 	font-size:24px;
 }
 button.genre:hover {
-	background-color:#FF0; 
+	background-color:#9CF; 
 }
 button.addedgenre {
 	width:100px;
@@ -135,6 +135,20 @@ button.addedgenre {
 }
 button.addedgenre:hover {
 	background-color:#0FF;	
+}
+
+button.chooseGenre {
+	width:150px;
+	height:30px; 
+	color:#000;
+	padding:3px 10px; 
+	background-color:#9CC; 
+    -webkit-border-radius:10px;
+    -moz-border-radius:15px;
+	font-size:18px;
+}
+button.chooseGenre:hover {
+	background-color:#9CF; 
 }
 
 img.showToWatch:hover {
