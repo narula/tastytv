@@ -31,12 +31,8 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 def insert_db(query, args=()):
-    cur = g.db.cursor()
-    cur.execute(query, args)
+    cur = g.db.execute(query, args)
     g.db.commit()
-    id = cur.lastrowid
-    cur.close()
-    return id
 
 @app.before_request
 def before_request():
@@ -88,7 +84,7 @@ def addShows(shows):
 def watchbox(mood):
     if(mood == 'stream' or mood == ''):
         moods = {}
-        playlist = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
+        playlist = query_db('''select tvshows.* from tvshows,playlist where playlist.user_id=0 and playlist.show_id = tvshows.show_id''')
     else:
         moodArray = mood.split("|")[:-1]
         moodArray = ','.join(moodArray)
