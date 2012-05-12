@@ -41,7 +41,7 @@ function addVideoToPlaylist(showpic, showvideo, showname, showdescription)
     'playlist.size': '320',
 		'skin': "{{ url_for('static', filename='jwplayer/glow.zip') }}",
     'playlist': [{
-            'file': "http://www.youtube.com/watch?v=TV-NhfgoA7A",
+            'file': "../"+myShow.show_video,
             'image': "../"+myShow.show_pic,
             'title': myShow.show_name,
             'description': myShow.show_description,
