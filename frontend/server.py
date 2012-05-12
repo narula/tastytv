@@ -77,7 +77,7 @@ def browse():
 def addShows(shows):
     showArray = shows.split("|")[:-1]
     for show in showArray:
-        insert_db('insert ignore into watchbox values(0,?)',show)
+        insert_db('insert into watchbox values(0,?)',show)
     return  redirect(url_for('watchbox', mood='stream'))
 
 @app.route("/watchbox/<mood>")
