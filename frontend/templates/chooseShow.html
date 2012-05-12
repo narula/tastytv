@@ -39,11 +39,11 @@ function watchShow(show_id)
 <h2 style="text-align:center"> We Recommend ... </h2>
 <table id="centeredTable" border="0" cellspacing="100" cellpadding="100" class="centeredTable"> <tbody>	<tr>
 {% for video in videos %}
-<td><img width="250px" height="150px" src="../{{video.show_pic}}" onclick="watchShow(this.id)" id="{{video.show_id}}" class="showToWatch"/></td>
+<td width="250px"><img width="250px" height="150px" src="../{{video.show_pic}}" onclick="watchShow(this.id)" id="{{video.show_id}}" class="showToWatch"/></td>
 {% endfor %}
 </tr><tr>
 {% for video in videos %}
-	<td><b>{{video.show_name}}</b> {{video.show_season}} <br/> {{video.show_description}}</td>
+	<td width="250px" style="text-align:left"><b>{{video.show_name}}</b> <br /> {{video.show_season}} <br/> {{video.show_description}}</td>
 {% endfor %}
 </tr> </tbody> </table>
 </div>
