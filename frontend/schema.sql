@@ -22,6 +22,12 @@ create table watchbox (
   show_id integer not null
 );
 
+drop table if exists playlist;
+create table playlist (
+  user_id integer not null,
+  show_id integer not null
+);
+
 drop table if exists genres;
 create table genres (
   genre_id integer not null,
