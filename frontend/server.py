@@ -82,7 +82,6 @@ def addShows(shows):
 
 @app.route("/addToPlaylist/<show>")
 def addToPlaylist(show):
-    print show
     insert_db('insert into playlist values(0,?)',[show])
     return  redirect(url_for('watchbox', mood='stream'))
 
