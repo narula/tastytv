@@ -130,7 +130,7 @@ def chooseShow(friends=None):
     friendArray = '('+friendArray+')'
     sqlString = '''select friends.* from friends where user_id in '''+friendArray
     friendInfo = query_db(sqlString)
-    videos = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id limit 3''') 
+    videos = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and tvshows.show_genre = 0 and watchbox.show_id = tvshows.show_id limit 3''') 
     return render_template('chooseShow.html',friends=friendInfo,videos=videos)
 
 
