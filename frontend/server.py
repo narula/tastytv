@@ -80,6 +80,12 @@ def addShows(shows):
         insert_db('insert into watchbox values(0,?)',[show])
     return  redirect(url_for('watchbox', mood='stream'))
 
+@app.route("/addToPlaylist/<show>")
+def addToPlaylist(show):
+    insert_db('insert into playlist values(0,?)',[show])
+>>>>>>> f8d62dd0b8b5ae161a2767d13faf04c338630b52
+    return  redirect(url_for('watchbox', mood='stream'))
+
 @app.route("/watchbox/<mood>")
 def watchbox(mood):
     if(mood == 'stream' or mood == ''):
