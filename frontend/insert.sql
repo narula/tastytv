@@ -2,8 +2,8 @@ insert into users values(0, 'Jenny', 'static/img/users/jenny.jpg');
 insert into users values(1, 'Neha', 'static/img/users/neha.jpg');
 
 insert into tvshows values(0, 0, '30rock', 'static/img/tv/30rock.jpg',   'http://www.youtube.com/watch?v=K_P7yWnAAd0', 'Season 5, Episode 4', 'Liz Lemon finds herself in a dilemma.  Cabletown is in trouble, Jack is gone, and Liz must take over.');
-insert into tvshows values(1, 1, 'Gossip Girl', 'static/img/tv/gossipgirl.jpg', 'http://www.youtube.com/watch?v=P0oWK67kuNQ', 'Season 5, Episode 4','Chuck and Blair blah blah');
-insert into tvshows values(2, 1, 'Revenge', 'static/img/tv/revenge.jpg', 'http://www.youtube.com/watch?v=kHIaORMG-AM','Season 3, Episode 8','She gets her revenge');
+insert into tvshows values(1, 1, 'Gossip Girl', 'static/img/tv/gossipgirl.jpg', 'http://www.youtube.com/watch?v=P0oWK67kuNQ', 'Season 5, Episode 4','Chuck and Blair have an adulterous affair');
+insert into tvshows values(2, 1, 'Revenge', 'static/img/tv/revenge.jpg', 'http://www.youtube.com/watch?v=kHIaORMG-AM','Season 1, Episode 8','Emily moves closer to exposing the Graysons.');
 insert into tvshows values(3, 0, 'How I Met Your Mother', 'static/img/tv/himym_S07E01.jpg', 'http://www.youtube.com/watch?v=TV-NhfgoA7A', 'Season 7, Episode 1','The Best Man Ted attends a wedding');
 insert into tvshows values(4, 0, 'How I Met Your Mother', 'static/img/tv/himym_S07E02.jpg', 'http://www.youtube.com/watch?v=TV-NhfgoA7A', 'Season 7, Episode 2','The Naked Truth');		
 insert into tvshows values(5, 0, 'How I Met Your Mother', 'static/img/tv/himym_S07E03.jpg', 'http://www.youtube.com/watch?v=TV-NhfgoA7A', 'Season 7, Episode 3','Ducky Tie');
