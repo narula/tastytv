@@ -14,8 +14,12 @@ function addVideoToPlaylist(showid, showpic, showvideo, showname, showdescriptio
     };
 	playlist.push(newItem);
 	jwplayer().load(playlist);
-	var newURL = "/addToPlaylist/"+showid;
-	parent.location = newURL;	
+  var currentURL=document.location;
+  urlList=url.split('/');
+  if (url[url.length-1] != 'stream') {
+    var newURL = "/addToPlaylist/"+showid;
+	  parent.location = newURL;	
+  }
 }
 
 </script>
