@@ -62,7 +62,7 @@ function addVideoToPlaylist(showpic, showvideo, showname, showdescription)
 
 <table id="watchbox" border="0" cellspacing="100" cellpadding="100" class="watchbox"> <tbody>	<tr>
 {% for video in watchbox %}
-	<td><img width="130px" height="80px" src="../{{video.show_pic}}" onclick="addVideoToPlaylist(this.src, 'http://www.youtube.com/watch?v=TV-NhfgoA7A', this.name)" id="{{video.show_video}}" name="{{video.show_name}}" description="{{video.show_description}}" /></td>
+	<td><img width="130px" height="80px" src="../{{video.show_pic}}" onclick="addVideoToPlaylist(this.src, this.name, this.title, this.alt)" name="{{video.show_video}}" title="{{video.show_name}}" alt="{{video.show_description}}" /></td>
 {% endfor %}
 </tr> </tbody> </table>
 </div>
