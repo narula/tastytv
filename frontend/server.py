@@ -31,8 +31,12 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 def insert_db(query, args=()):
-    cur = g.db.execute(query,args)
+    cur = g.db.cursor()
+    cur.execute(query, args)
     g.db.commit()
+    id = cur.lastrowid
+    cur.close()
+    return id
 
 @app.before_request
 def before_request():
