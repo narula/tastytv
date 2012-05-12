@@ -1,5 +1,5 @@
 from __future__ import with_statement
-from flask import Flask, url_for, request, render_template, g, json
+from flask import Flask, url_for, request, render_template, g, json, redirect
 from sqlite3 import dbapi2 as sqlite3
 from contextlib import closing
 
@@ -29,6 +29,10 @@ def query_db(query, args=(), one=False):
     rv = [dict((cur.description[idx][0], value)
                for idx, value in enumerate(row)) for row in cur.fetchall()]
     return (rv[0] if rv else None) if one else rv
+
+def insert_db(query, args=()):
+    cur = g.db.execute(query,args)
+    g.db.commit()
 
 @app.before_request
 def before_request():
@@ -66,11 +70,23 @@ def feeling():
 @app.route("/browse")
 def browse():
     shows=query_db('''select tvshows.* from tvshows ''')
+    print "BROWSING SHOWS"
     return render_template('browse.html',shows=shows)
+
+@app.route("/addShows/<shows>")
+def addShows(shows):
+    showArray = shows.split("|")[:-1]
+    showToAdd = '9'
+    print showArray
+    query_db('''insert into watchbox values(0,9)''')
+    for show in showArray:
+        print "show: " + show
+        query_db('''insert into watchbox values(0,10)''')
+    return  redirect(url_for('watchbox', mood='stream'))
 
 @app.route("/watchbox/<mood>")
 def watchbox(mood):
-    if(mood == 'stream'):
+    if(mood == 'stream' or mood == ''):
         moods = {}
         playlist = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
     else:
@@ -79,6 +95,8 @@ def watchbox(mood):
         moodArray = '('+moodArray+')'
         moods = query_db('''select genres.* from genres where genres.genre_id in ''' + moodArray)
         playlist = query_db('''select tvshows.* from tvshows, genres where tvshows.show_genre = genres.genre_id and genres.genre_id in ''' + moodArray + ''' limit 6''')
+        
+    ## now get your watchbox, and turn the playlist into json
     watchbox = query_db('''select tvshows.* from tvshows,watchbox where watchbox.user_id=0 and watchbox.show_id = tvshows.show_id''')
     playlist =  json.dumps(playlist)
     return render_template('watchbox.html', watchbox = watchbox, moods = moods, playlist = playlist)
