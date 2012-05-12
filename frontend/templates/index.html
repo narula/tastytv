@@ -14,6 +14,7 @@
      Entry.file = Shows[i].show_video;
      Entry.image = "../"+ Shows[i].show_pic;
      Entry.title = Shows[i].show_name;
+     Entry.description = Shows[i].show_description;
      Playlist.push(Entry);
     }
     jwplayer("container").setup({
@@ -35,7 +36,7 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="static/js/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via build script -->
   <script src="static/js/plugins.js"></script>
