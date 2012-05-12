@@ -17,8 +17,8 @@ function addVideoToPlaylist(showid, showpic, showvideo, showname, showdescriptio
   var currentURL=document.location + "";
   urlList=currentURL.split('/');
   if (urlList[urlList.length-1] == 'stream') {
-    var newURL = "/addToPlaylist/"+showid;
-	  parent.location = newURL;	
+    	var newURL = "/addToPlaylist/"+showid;
+	  	parent.location = newURL;	
   }
 }
 
