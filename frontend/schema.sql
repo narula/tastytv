@@ -12,7 +12,8 @@ create table tvshows (
 drop table if exists users;
 create table users (
   user_id integer primary key autoincrement,
-  user_name string not null
+  user_name string not null,
+  user_pic string not null
 );
 
 drop table if exists watchbox;
