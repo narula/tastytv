@@ -1,0 +1,71 @@
+\section{Related Work}
+
+\subsection{Social Television}
+The current sphere of social television mostly exists online.  There’s
+buzz over social networks like twitter or facebook, blogposts, online
+communities, or even virtual watching rooms.  Nonetheless, all of
+these outlets emphasize the virtual presence of viewers.  None of
+these services aim at bringing users together in real life, rather
+they encourage exchange over the internet.  A majority of social tv
+(about 95\% \cite{chausse}) is on social platforms like twitter and
+facebook.  However, many existing apps allow users to chat about
+different shows.  This includes BeeTV, HashTV, TV Chatter, TVTweet,
+CommenTV, and TweetYourTV \cite{chausse}.  Again, all of these
+applications only encourage online interaction.
+
+\subsection{Recommender Systems} 
+\label{sec:recommender}
+There are three different main approaches to creating a recommendation
+system: collaborative filtering, content filtering, and a hybrid
+approach \cite{Su} \cite{vozalis}.  The first method, collaborative
+filtering, relies on nearest neighbor relationships and item/user
+based recommendations \cite{su}.  This method is most predominantly
+used by Amazon and Last.fm.  However, traditional collaborative
+filtering suffers from several problems.  The first problem is data
+sparsity \cite{su} \cite{melville}, which it tries to alleviate by
+dimensionality reduction, using the SVD and Principal Component
+Analysis to extract the key features.  Nonetheless, it also suffers
+from scalability problems \cite{papagelis}, synonymy, the grey sheep
+syndrome (where a person exhibits inconsistent behavior) \cite{su},
+and shiling attacks (people trying to promote their own material).
+The second method, content filtering, adopted by systems like Pandora
+and Rotten Tomatoes, uses Bayesian belief nets and clustering to
+recommend items based upon discrete classifiers on the content.
+Finally, the hybrid approach combines both collaborative and content
+filtering, which is what Netflix does.  \cite{su} \cite{melville} all
+conclude that the hybrid approach, although more complex, increases
+prediction performance.  Thus, TuBely adopts a hybrid of collaborative
+and content filtering, putting a large emphasis on your real life
+social tv watching habits, as well as adding other potential factors
+to the recommendation voting.
+
+\subsection{Internet Radio}
+Internet radio, in terms of socialization and personalization, has
+evolved much quicker than television.  Thus, TuBely draws inspiration
+from the models that internet radio has created.  The first
+inspiration is the “currently listening” queue that services like
+Grooveshark \cite{grooveshark} and Spotify \cite{spotify} have.  They
+make a distinction between the user’s currently streaming queue and
+the list of songs that the user may be interested in.  In addition,
+Pandora’s \cite{pandora} content-based collaborative filtering system
+inspired TuBely.  In Pandora, songs are tagged with specific details
+to help create better recommendations.
+
+\subsection{Related Work}
+Hulu is the first major television outlet to incorporate directly with
+facebook and the ticker, similar to Spotify.  Hulu allows you to see
+shows that your friends are watching, and broadcasts the shows that
+you watch to your friends.  It aggregates the shows that you watch, as
+well as lets you have conversations with your friends.
+
+There are also many apps that allow users to “check in” to tv shows
+and see what they’re friends are watching and have watched, including
+GetGlue, IntoNow, ScreenTribe, TunerFish, and WatchPoints
+\cite{chausse}.  However, most of these never involve real life user
+interaction.  IntoNow notifies your friend if you both are watching at
+the same time, but it’s retroactive socialization in that it notifies
+you after you’ve already made the conscious effort to already start
+watching the show.  On the other hand, TuBely pushes for proactive
+socialization in that you’re already hanging out with friends and want
+to decide what to watch.  TuBely encourages viewers to watch things
+with their friends in real life.
