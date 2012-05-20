@@ -1,7 +1,7 @@
 \section{System}
 
 \subsection{WatchBox vs PlayList}
-Mimicking the idea of internet radio, TuBely abstracts the idea of
+Mimicking the idea of internet radio, {\sys} abstracts the idea of
 your current streaming queue as your playlist, and differentiates that
 from the list of songs or shows you want to watch later, your
 WatchBox.  In general, users will browse for shows they want to watch
@@ -12,7 +12,7 @@ is removed from their WatchBox.  The WatchBox playlist model means the
 user ultimately has the power in deciding what they watch in the
 moment.  They can remove things or add things from both their queue
 and their watchbox.  If there are currently no shows in your playlist,
-then TuBely will recommend shows, either pulling the shows currently
+then {\sys} will recommend shows, either pulling the shows currently
 in your WatchBox or using our situational recommendation system to
 recommend a new show.  Users can override or remove any recommendation
 whenever they want.
@@ -29,36 +29,36 @@ whenever they want.
 \subsection{Watch with friends}
 Most current social television apps want to help the user broadcast
 what they’re watching and converse with others over chat about what
-they’re watching.  TuBely aims to incorporate this social viewing
+they’re watching.  {\sys} aims to incorporate this social viewing
 experience in real life and encourage person to person interaction.
-TuBely mainly does this by making recommendations based on what
+{\sys} mainly does this by making recommendations based on what
 friends you are hanging out with.  Normally, whenever people watch
 television with friends, they end up flipping through channels, not
 knowing what to watch.  Alternatively, too many people might want to
-watch different programs, resulting in feuds over the remote.  TuBely
+watch different programs, resulting in feuds over the remote.  {\sys}
 fixes these problems, recommending shows based on the union of the
 group’s preferences.
 
-Through Facebook, TuBely will scrape all of a user’s friend list.  The
-user will choose the friends they are with, and then TuBely will
+Through Facebook, {\sys} will scrape all of a user’s friend list.  The
+user will choose the friends they are with, and then {\sys} will
 recommend three shows based on our situational recommendation model.
 The user can either choose one of the three shows to start watching,
 or press ‘Surprise me!’, which will automatically dump one of the
 three shows into the currently streaming playlist.
 
-Although TuBely aims primarily at bringing people together in real
+Although {\sys} aims primarily at bringing people together in real
 life, we understand that sometimes it is not always physically
 possible.  Thus, we also support watching with friends virtually.
 Similar to the current television viewing room model, users can join
 in on friends who are already watching a show.
 
-In general, TuBely aims at bringing people together around the
+In general, {\sys} aims at bringing people together around the
 television.  Instead of focusing on broadcasting what the user is
-currently watching, TuBely encourages users to watch tv with other
+currently watching, {\sys} encourages users to watch tv with other
 people.
 
 \subsection{Mood}
-Drawing from Pandora’s model, TuBely allows the user to specify what
+Drawing from Pandora’s model, {\sys} allows the user to specify what
 they’re in the mood to watch.  Viewers will select a mood based on
 specialized categories that are found based on a detailed tagging
 system.  There will be the typical genre selections, such as comedy,
@@ -98,6 +98,6 @@ well as what mood you’re in.
 \end{figure}
 
 \subsection{Implementation}
-TuBely is supported by a python flask server and uses jinja
+{\sys} is supported by a python flask server and uses jinja
 templating.  It is coded in HTML/CSS/javascript and utilizes jwplayer
 for its embedded video player and playlist functionality.

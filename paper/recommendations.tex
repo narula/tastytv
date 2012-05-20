@@ -1,0 +1,57 @@
+\section{Situtational Recommendations}
+As we saw in Section \ref{sec:recommender}, the hybrid recommendation
+system is the most effective in making better suggestions.  {\sys}
+will adopt a hybrid recommendation system with weighted majority
+voting, where we will take into account several situational factors,
+including time, location, mood-based content filtering, traditional
+social network collaborative filtering, and cross-media collaborative
+filtering.
+
+\subsection{Time and Location}
+A unique feature of our recommendation algorithm is the situational
+factors, specifically the time and location that a viewer watches a
+program.  Viewers are definitely influenced by the presence of their
+friends, and they may only watch something if their friends are with
+them.  For example, let’s say that Mary only likes to watch Community
+with her friends on Thursday nights, but wouldn’t normally watch it by
+herself.  We can track that she only watches it on Thursday nights
+with the same group of people and weight Community less in the
+recommendation algorithm if Mary is watching alone, but highly
+recommend it if Mary is with those same friends.  We can also look at
+the time and location factors individually.  If at night, you are more
+prone to watching late night cartoons, we can weight those more
+highly.  In addition, if you tend to watch sports only at bars, we
+won’t recommend sports to you while you’re watching at home alone.
+Adding this temporal and locational component to recommendations
+allows us to suggest programs more tailored to your individual
+schedule and activities.
+
+\subsection{Mood/Specialized Genres}
+The Pandora style tagging model we’ve adopted will also help factor
+into our recommendations.  This will contribute to the content
+collaborative filtering.
+
+\subsection{Traditional Social Network Filtering}
+Following Pinterest and Spotify’s model of automatically opting in the
+user’s facebook profile, {\sys} will also grab viewer’s facebook
+information in order to access your friends.  Since the emphasis of
+{\sys} is watching with friends, we must be able to have access to
+your friends in order to recommend the appropriate content.  Another
+benefit of using Facebook is that we can then leverage Facebook’s
+social graph to find the viewer’s closest friends, and weight the
+collaborative filtering aspect of our algorithm appropriately.
+
+We could also link to viewer’s other available social networks. After
+running some natural language processing algorithms on user’s blogs,
+tweets, and status updates, we can gain other valuable information on
+the user’s likes and dislikes.
+
+\subsection{Cross media collaborative filtering}
+In addition to the prior collaborative filtering methods, we can
+introduce cross media collaborative filtering into our recommendation
+system.  
+
+%% NEHA TODO
+Browsing/reading history 
+Purchase history 
+Data Analytics
