@@ -12,7 +12,7 @@ A unique feature of our recommendation algorithm is the situational
 factors, specifically the time and location that a viewer watches a
 program.  Viewers are definitely influenced by the presence of their
 friends, and they may only watch something if their friends are with
-them.  For example, let’s say that Mary only likes to watch Community
+them.  For example, let's say that Mary only likes to watch Community
 with her friends on Thursday nights, but wouldn’t normally watch it by
 herself.  We can track that she only watches it on Thursday nights
 with the same group of people and weight Community less in the
@@ -27,13 +27,13 @@ allows us to suggest programs more tailored to your individual
 schedule and activities.
 
 \subsection{Mood/Specialized Genres}
-The Pandora style tagging model we’ve adopted will also help factor
+The Pandora style tagging model we've adopted will also help factor
 into our recommendations.  This will contribute to the content
 collaborative filtering.
 
 \subsection{Traditional Social Network Filtering}
 Following Pinterest and Spotify’s model of automatically opting in the
-user’s facebook profile, {\sys} will also grab viewer’s facebook
+user’s facebook profile, {\sys} will also grab viewer's facebook
 information in order to access your friends.  Since the emphasis of
 {\sys} is watching with friends, we must be able to have access to
 your friends in order to recommend the appropriate content.  Another
@@ -41,7 +41,7 @@ benefit of using Facebook is that we can then leverage Facebook’s
 social graph to find the viewer’s closest friends, and weight the
 collaborative filtering aspect of our algorithm appropriately.
 
-We could also link to viewer’s other available social networks. After
+We could also link to viewer's other available social networks. After
 running some natural language processing algorithms on user’s blogs,
 tweets, and status updates, we can gain other valuable information on
 the user’s likes and dislikes.

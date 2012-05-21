@@ -30,7 +30,7 @@ at any time.
 
 \subsection{Watch with friends}
 Most current social television apps want to help the user broadcast
-what they’re watching and converse with others over chat about what
+what they're watching and converse with others over chat about what
 they’re watching.  {\sys} aims to address watching in real time and
 encourage real life interaction.  {\sys} mainly does this by making
 recommendations based on what friends you are hanging out with.
@@ -38,13 +38,23 @@ Normally, whenever people watch television with friends, they end up
 flipping through channels, not knowing what to watch.  Alternatively,
 too many people might want to watch different programs, resulting in
 feuds over the remote.  {\sys} fixes these problems, recommending
-shows based on the union of the group’s preferences.
+shows based on the union of the group's preferences.
 
-Through Facebook, {\sys} will scrape all of a user’s friend list.  The
-user will choose the friends they are with, and then {\sys} will
-recommend three shows based on our situational recommendation model.
+\begin{figure}
+\centering
+\subfloat[Viewer chooses friends to watch with] {\label{fig:choosefriends}\includegraphics[width=0.4\textwidth]{pics/choosefriends.png}}
+
+
+\subfloat[Viewer chooses from one of the three recommended shows] {\label{fig:chooseshows}\includegraphics[width=0.4\textwidth]{pics/chooseshow.png}}
+\caption{Watching with friends}
+\label{fig:friends}
+\end{figure}
+
+Through Facebook, {\sys} will scrape all of a user's friend list.  The
+user will choose the friends they are with as seen in Figure \ref{fig:choosefriends}, and then {\sys} will
+recommend three shows based on our situational recommendation model as seen in Figure \ref{fig:chooseshows}.
 The user can either choose one of the three shows to start watching,
-or press ‘Surprise me!’, which will automatically dump one of the
+or press "Surprise me!", which will automatically dump one of the
 three shows into the currently streaming playlist.
 
 Although {\sys} aims primarily at bringing people together in real
@@ -59,24 +69,14 @@ currently watching, {\sys} encourages users to watch tv with other
 people.
 
 \subsection{Mood}
-Drawing from Pandora’s model, {\sys} allows the user to specify what
+Drawing from Pandora's model, {\sys} allows the user to specify what
 they’re in the mood to watch.  Viewers will select a mood based on
 specialized categories that are found based on a detailed tagging
-system.  There will be the typical genre selections, such as comedy,
+system as seen in Figure \ref{fig:mood}.  There will be the typical genre selections, such as comedy,
 drama, and reality.  However, this tagging system enables more
-specific categories.  For instance, the ‘girly’ category may contain
-shows like Gossip Girl or The Hills.  The ‘trashy’ category will have
+specific categories.  For instance, the "girly" category may contain
+shows like Gossip Girl or The Hills.  The "trashy" category will have
 shows like Jersey Shore or the Real Houswives.
-
-\begin{figure}
-\centering
-\subfloat[Viewer chooses friends to watch with] {\label{fig:choosefriends}\includegraphics[width=0.4\textwidth]{pics/choosefriends.png}}
-
-
-\subfloat[Viewer chooses from one of the three recommended shows] {\label{fig:chooseshows}\includegraphics[width=0.4\textwidth]{pics/chooseshow.png}}
-\caption{Watching with friends}
-\label{fig:friends}
-\end{figure}
 
 A user may select multiple moods if they are watching alone, or if
 they are watching with friends.  If they are alone, they will be
@@ -84,15 +84,23 @@ directed to the viewing area, and their playlist will be pre-populated
 with shows that reflect the moods they chose.  The playlist will first
 be populated with shows from your WatchBox that match the mood, and
 then subsequently with recommended shows based on our recommendation
-algorithm.  If the user is viewing with friends, we’ll recommend three
-shows, taking into account both you and your friend’s preferences, as
-well as what mood you’re in.
+algorithm.  If the user is viewing with friends, we'll recommend three
+shows, taking into account both you and your friend's preferences, as
+well as what mood you're in.
 
 \begin{figure}
 \centering
-\subfloat[Viewer chooses from a mood] {\label{fig:model1}\includegraphics[width=0.45\textwidth]{pics/mood.png}}
+\subfloat[Viewer chooses from a mood] 
+{\label{fig:model1}
+\includegraphics[width=0.45\textwidth]{pics/mood.png}}
 \caption{Choosing a Mood}
 \label{fig:mood}
+\end{figure}
+
+\begin{figure} 
+\centering
+ \includegraphics[width=0.45\textwidth]{pics/mood.png}
+\caption{Choosing a Mood}
 \end{figure}
 
 \subsection{Implementation}
