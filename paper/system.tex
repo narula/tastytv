@@ -18,12 +18,17 @@ recommend a new show.  Users can override or remove any recommendation
 at any time.
 
 \begin{figure}
-\centering \subfloat[Browse for shows and add them to your WatchBox]
-           {\label{fig:model1}\includegraphics[width=0.45\textwidth]{pics/browse.png}}
-           ~~\subfloat[Add shows from your WatchBox to your playlist]
-           {\label{fig:model1}\includegraphics[width=0.45\textwidth]{pics/watchbox.png}}
-\caption{Browsing and adding shows to your WatchBox}
-\label{fig:watchbox}
+\centering 
+\includegraphics[width=0.45\textwidth]{pics/browse.png}
+\caption{Browse for shows and add them to your WatchBox.}
+\label{fig:model1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.45\textwidth]{pics/watchbox.png}}
+\caption{Add shows from the WatchBox to your playlist.}
+\label{fig:model2}
 \end{figure}
 
 \subsection{Watch with friends}
@@ -67,13 +72,18 @@ shows like Gossip Girl or The Hills.  The ‘trashy’ category will have
 shows like Jersey Shore or the Real Houswives.
 
 \begin{figure}
-\centering \subfloat[Viewer chooses from a mood]
-           {\label{fig:model1}\includegraphics[width=0.45\textwidth]{pics/mood.png}}
-           ~~\subfloat[Viewer chooses from a mood while watching with
-             friends]
-           {\label{fig:model1}\includegraphics[width=0.45\textwidth]{pics/choosefriends.png}}
+\centering 
+\label{fig:model3}
+\includegraphics[width=0.45\textwidth]{pics/mood.png}}
+\caption{Viewer chooses from a mood while watching with
+             friends.}
+\end{figure}
+
+\begin{figure}
+\centering 
+\label{fig:model4}
+\includegraphics[width=0.45\textwidth]{pics/choosefriends.png}}
 \caption{Choosing a Mood}
-\label{fig:mood}
 \end{figure}
 
 A user may select multiple moods if they are watching alone, or if
@@ -85,16 +95,6 @@ then subsequently with recommended shows based on our recommendation
 algorithm.  If the user is viewing with friends, we’ll recommend three
 shows, taking into account both you and your friend’s preferences, as
 well as what mood you’re in.
-
-\begin{figure}
-\centering \subfloat[Playlist population based on your mood]
-           {\label{fig:yourmood}\includegraphics[width=0.45\textwidth]{pics/youmoodrec.png}}
-           ~~\subfloat[Recommendation based on you, your friends, and
-             your mood]
-           {\label{fig:groupmood}\includegraphics[width=0.45\textwidth]{pics/friendsmoodrec.png}}
-\caption{Mood Recommendations}
-\label{fig:moodrecommend}
-\end{figure}
 
 \subsection{Implementation}
 {\sys} runs on a Python Flask server and uses Jinja
