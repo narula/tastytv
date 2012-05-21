@@ -46,12 +46,29 @@ running some natural language processing algorithms on user’s blogs,
 tweets, and status updates, we can gain other valuable information on
 the user’s likes and dislikes.
 
-\subsection{Cross media collaborative filtering}
+\subsection{Cross-media collaborative filtering}
 In addition to the prior collaborative filtering methods, we can
-introduce cross media collaborative filtering into our recommendation
-system.  
+introduce cross-media collaborative filtering into our recommendation
+system.  The goal here is to develop profiles of users based on their
+tastes, using similarity in profiles to do tv show suggestions.
 
-%% NEHA TODO
-Browsing/reading history 
-Purchase history 
-Data Analytics
+We look at three different kinds of cross-media data analytics:
+
+\begin{itemize}
+\item \textbf{Browsing history}.  The browser history of a user is a
+  valuable signal in classifying the user.  For example, a person who
+  frequently reads espn.com would probably enjoy a very different tv
+  show than someone who spends a lot of time reading fashion websites.
+  These are signals into interests and consequently television show
+  preferences.
+\item \textbf{Purchase history}.  Similarly, tracking a user's
+  purchase history provides insight into preferences and tastes.  A
+  store can determine if a patron is pregnant just by her shopping
+  history~\cite{target}, and this kind of information is a strong
+  signal into what content that person might want to watch on tv.
+\item \textbf{News/Sharing history.}  Reading material provides
+  insight about high/low end consumer preferences.  Users who read the
+  New York Times and read the New Yorker might have a tendency to
+  watch HBO dramas, while users who read gossip websites prefer
+  reality television.
+\end{itemize}
