@@ -15,7 +15,7 @@ and their watchbox.  If there are currently no shows in your playlist,
 then {\sys} will recommend shows, either pulling the shows currently
 in your WatchBox or using our situational recommendation system to
 recommend a new show.  Users can override or remove any recommendation
-whenever they want.
+at any time.
 
 \begin{figure}
 \centering \subfloat[Browse for shows and add them to your WatchBox]
@@ -29,15 +29,14 @@ whenever they want.
 \subsection{Watch with friends}
 Most current social television apps want to help the user broadcast
 what they’re watching and converse with others over chat about what
-they’re watching.  {\sys} aims to incorporate this social viewing
-experience in real life and encourage person to person interaction.
-{\sys} mainly does this by making recommendations based on what
-friends you are hanging out with.  Normally, whenever people watch
-television with friends, they end up flipping through channels, not
-knowing what to watch.  Alternatively, too many people might want to
-watch different programs, resulting in feuds over the remote.  {\sys}
-fixes these problems, recommending shows based on the union of the
-group’s preferences.
+they’re watching.  {\sys} aims to address watching in real time and
+encourage real life interaction.  {\sys} mainly does this by making
+recommendations based on what friends you are hanging out with.
+Normally, whenever people watch television with friends, they end up
+flipping through channels, not knowing what to watch.  Alternatively,
+too many people might want to watch different programs, resulting in
+feuds over the remote.  {\sys} fixes these problems, recommending
+shows based on the union of the group’s preferences.
 
 Through Facebook, {\sys} will scrape all of a user’s friend list.  The
 user will choose the friends they are with, and then {\sys} will
@@ -98,6 +97,6 @@ well as what mood you’re in.
 \end{figure}
 
 \subsection{Implementation}
-{\sys} is supported by a python flask server and uses jinja
-templating.  It is coded in HTML/CSS/javascript and utilizes jwplayer
-for its embedded video player and playlist functionality.
+{\sys} runs on a Python Flask server and uses Jinja
+templating~\cite{flask,jinja}.  It is coded in HTML/CSS/javascript and utilizes JWPlayer
+for its embedded video player and playlist functionality~\cite{jwplayer}.

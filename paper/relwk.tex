@@ -7,32 +7,32 @@ communities, or even virtual watching rooms.  Nonetheless, all of
 these outlets emphasize the virtual presence of viewers.  None of
 these services aim at bringing users together in real life, rather
 they encourage exchange over the internet.  A majority of social tv
-(about 95\% \cite{chausse}) is on social platforms like twitter and
-facebook.  However, many existing apps allow users to chat about
-different shows.  This includes BeeTV, HashTV, TV Chatter, TVTweet,
-CommenTV, and TweetYourTV \cite{chausse}.  Again, all of these
-applications only encourage online interaction.
+(about 95\%) is on social platforms like twitter and
+facebook~\cite{chausse}.  However, many existing apps allow users to
+chat about different shows.  This includes BeeTV, HashTV, TV Chatter,
+TVTweet, CommenTV, and TweetYourTV~\cite{chausse}.  Again, all of
+these applications only encourage online interaction.
 
 \subsection{Recommender Systems} 
 \label{sec:recommender}
 There are three different main approaches to creating a recommendation
 system: collaborative filtering, content filtering, and a hybrid
-approach \cite{Su} \cite{vozalis}.  The first method, collaborative
+approach~\cite{su,vozalis}.  The first method, collaborative
 filtering, relies on nearest neighbor relationships and item/user
 based recommendations \cite{su}.  This method is most predominantly
 used by Amazon and Last.fm.  However, traditional collaborative
 filtering suffers from several problems.  The first problem is data
-sparsity \cite{su} \cite{melville}, which it tries to alleviate by
+sparsity~\cite{su,melville}, which it tries to alleviate by
 dimensionality reduction, using the SVD and Principal Component
 Analysis to extract the key features.  Nonetheless, it also suffers
-from scalability problems \cite{papagelis}, synonymy, the grey sheep
-syndrome (where a person exhibits inconsistent behavior) \cite{su},
+from scalability problems~\cite{papagelis}, synonymy, the grey sheep
+syndrome (where a person exhibits inconsistent behavior)~\cite{su},
 and shiling attacks (people trying to promote their own material).
 The second method, content filtering, adopted by systems like Pandora
 and Rotten Tomatoes, uses Bayesian belief nets and clustering to
 recommend items based upon discrete classifiers on the content.
 Finally, the hybrid approach combines both collaborative and content
-filtering, which is what Netflix does.  \cite{su} \cite{melville} all
+filtering, which is what Netflix does~\cite{su,melville}.  All
 conclude that the hybrid approach, although more complex, increases
 prediction performance.  Thus, {\sys} adopts a hybrid of collaborative
 and content filtering, putting a large emphasis on your real life
@@ -44,10 +44,10 @@ Internet radio, in terms of socialization and personalization, has
 evolved much quicker than television.  Thus, {\sys} draws inspiration
 from the models that internet radio has created.  The first
 inspiration is the “currently listening” queue that services like
-Grooveshark \cite{grooveshark} and Spotify \cite{spotify} have.  They
+Grooveshark~\cite{grooveshark} and Spotify~\cite{spotify} have.  They
 make a distinction between the user’s currently streaming queue and
 the list of songs that the user may be interested in.  In addition,
-Pandora’s \cite{pandora} content-based collaborative filtering system
+Pandora’s~\cite{pandora} content-based collaborative filtering system
 inspired {\sys}.  In Pandora, songs are tagged with specific details
 to help create better recommendations.
 
@@ -60,8 +60,8 @@ well as lets you have conversations with your friends.
 
 There are also many apps that allow users to “check in” to tv shows
 and see what they’re friends are watching and have watched, including
-GetGlue, IntoNow, ScreenTribe, TunerFish, and WatchPoints
-\cite{chausse}.  However, most of these never involve real life user
+GetGlue, IntoNow, ScreenTribe, TunerFish, and WatchPoints~\cite{chausse}.  
+However, most of these never involve real life user
 interaction.  IntoNow notifies your friend if you both are watching at
 the same time, but it’s retroactive socialization in that it notifies
 you after you’ve already made the conscious effort to already start

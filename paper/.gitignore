@@ -2,4 +2,7 @@ main.aux
 main.pdf
 main.log
 main.ps
+main.bbl
+ieeebib.bst
+main.blg
 *~
